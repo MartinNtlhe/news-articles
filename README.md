@@ -22,10 +22,10 @@ The android app lets you:
 - Android Build Tools v30.0.1
 - Android Support Repository
 - Android 6.0+ phone if physical testing
-- Android virtual Device created. Instructions to create one can be found here [here](https://developer.android.com/studio/run/managing-avds#createavd).
-- _(Optional)_ Android studio
-
 ## Getting Started
+- Install Gradle SDK. Download the latest version and install it in your root. Available [here](https://gradle.org/)
+- You'll need to have Android Studio installed also. Downloaded the sdk and went to tools directory to start the android sdk (http://developer.android.com/sdk/installing/adding-packages.html )
+
 ##### Clone this project
 ```
 $ git clone git@github.com:MartinNtlhe/news-articles.git
@@ -33,4 +33,8 @@ $ cd news-articles
 ```
 
 ##### Run
-This project uses the Gradle build system. To build this project, runt `gradlew build` command on the root project or use `Import Project` in Android Studio.
+This project uses the Gradle build system. To build this project, runt `gradlew build` command on the root project. This will run project tests, and generate link tests with coverage reports. 
+The report is located inside project root, inside `app/build/reports/lint-results.html`. Tests reports are located inside `app/build/reports/tests/testDebugUnitTest/index.html`
+
+To Install the apk in your device you need to run `gradle app:installDebug` whilst inside the project directory. There are cases where the project gradle version conflict with the system gradle version, if so, make sure the system and project gradle are of the same version.
+Alternatively, download the sample apk [here](https://github.com/MartinNtlhe/news-articles/blob/main/apk/demo.apk)
